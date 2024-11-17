@@ -25,7 +25,7 @@ module "blog_vpc" {
   cidr = "${var.environment.network_prefix}.0.0/16"
 
   azs             = ["us-west-1a", "us-west-1c"]
-  public_subnets  = [""${var.environment.network_prefix}.0.0/16".101.0/24""${var.environment.network_prefix}.0.0/16".102.0/24"]
+  public_subnets  = ["${var.environment.network_prefix}.101.0/24", "${var.environment.network_prefix}.102.0/24"]
 
   tags = {
     Terraform = "true"
