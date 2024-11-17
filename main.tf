@@ -57,7 +57,14 @@ module "alb" {
   subnets         = module.blog_vpc.public_subnets
   security_groups = [module.blog_sg.security_group_id]
 
-  
+  default_action {
+    type             = "fixed-response"
+    fixed_response {
+      status_code  = 200
+      message_body = "OK"
+      content_type = "text/plain"
+    }
+
   target_groups = [
     {
       name_prefix      = "blog-"
