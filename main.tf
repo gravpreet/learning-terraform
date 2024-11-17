@@ -72,9 +72,9 @@ module "alb" {
       port               = 80
       protocol           = "HTTP"
       target_group_index = 0
-      default_action {
+      default_action = {
         type = "fixed-response"
-        fixed_response {
+        fixed_response = {
           status_code = 200
           message_body = "OK"
           content_type = "text/plain"
