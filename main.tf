@@ -64,6 +64,7 @@ module "alb" {
       message_body = "OK"
       content_type = "text/plain"
     }
+  }
 
   target_groups = [
     {
