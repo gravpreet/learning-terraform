@@ -74,8 +74,8 @@ module "alb" {
 
   listeners = {
     http = {
-      port               = module.blog_alb.target_groups.port
-      protocol           = module.blog_alb.target_groups.backend_protocol
+      port               = var.target_groups.port
+      protocol           = var.target_groups.backend_protocol
       target_group_index = 0
     }
   }
